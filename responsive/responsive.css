@@ -12,8 +12,7 @@
 }
 
 
-@media only screen 
-and (min-device-width : 1200px){
+@media only screen and (min-width : 1200px){
 	.software{
 		width: 130px;	
 		height: 240px;
@@ -21,8 +20,7 @@ and (min-device-width : 1200px){
 	}
 }
 
-@media only screen 
-and (min-device-width : 1100px) and (max-device-width : 1200px){
+@media only screen and (min-width : 1100px) and (max-width : 1200px){
 	.software{
 		width: 130px;	
 		height: 240px;
@@ -30,8 +28,7 @@ and (min-device-width : 1100px) and (max-device-width : 1200px){
 	}
 }
 
-@media only screen 
-and (min-device-width : 1000px) and (max-device-width : 1100){
+@media only screen and (min-width : 1000px) and (max-width : 1100px){
 	.software{
 		width: 130px;	
 		height: 240px;
@@ -39,8 +36,7 @@ and (min-device-width : 1000px) and (max-device-width : 1100){
 	}
 }
 
-@media only screen 
-and (min-device-width : 900px) and (max-device-width : 1000px){
+@media only screen and (min-width : 900px) and (max-width : 1000px){
 	.software{
 		width: 130px;	
 		height: 240px;
@@ -48,8 +44,7 @@ and (min-device-width : 900px) and (max-device-width : 1000px){
 	}
 }
 
-@media only screen 
-and (min-device-width : 800px) and (max-device-width : 900px){
+@media only screen and (min-width : 800px) and (max-width : 900px){
 	.software{
 		width: 130px;	
 		height: 240px;
@@ -57,8 +52,7 @@ and (min-device-width : 800px) and (max-device-width : 900px){
 	}
 }
 
-@media only screen 
-and (min-device-width : 700px) and (max-device-width : 800px){
+@media only screen and (min-width : 700px) and (max-width : 800px){
 	.software{
 		width: 130px;	
 		height: 240px;
@@ -66,8 +60,7 @@ and (min-device-width : 700px) and (max-device-width : 800px){
 	}
 }
 
-@media only screen 
-and (min-device-width : 600px) and (max-device-width : 700px){
+@media only screen and (min-width : 600px) and (max-width : 700px){
 	.software{
 		width: 130px;	
 		height: 240px;
@@ -75,8 +68,7 @@ and (min-device-width : 600px) and (max-device-width : 700px){
 	}
 }
 
-@media only screen 
-and (min-device-width : 500px) and (max-device-width : 600px){
+@media only screen and (min-width : 500px) and (max-width : 600px){
 	.software{
 		width: 130px;	
 		height: 240px;
@@ -84,8 +76,7 @@ and (min-device-width : 500px) and (max-device-width : 600px){
 	}
 }
 
-@media only screen 
-and (min-device-width : 400px) and (max-device-width : 500px){
+@media only screen and (min-width : 400px) and (max-width : 500px){
 	.software{
 		width: 130px;	
 		height: 240px;
@@ -93,12 +84,11 @@ and (min-device-width : 400px) and (max-device-width : 500px){
 	}
 }
 
-@media only screen 
-and (max-device-width : 400px){
+@media only screen and (max-width : 400px){
 	.software{
 		width: 130px;	
 		height: 240px;
-		background: url("software.png") -504px -240px;
+		background: url("software.png") -508px -240px;
 	}
 }
 

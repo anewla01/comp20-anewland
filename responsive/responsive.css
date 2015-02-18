@@ -4,6 +4,7 @@
 * Assignment: Lab 4
 */
 
+/*NOTE: A panel is 130px by 240 px. shift of 127 horizontal and 240 vertical*/
 
 .software{
 	width: 640px;	
@@ -12,6 +13,7 @@
 }
 
 
+/*Slide1: How the customer explained it*/
 @media only screen and (min-width : 1200px){
 	.software{
 		width: 130px;	
@@ -20,6 +22,7 @@
 	}
 }
 
+/*Slide2: How the Project Leader understood it*/
 @media only screen and (min-width : 1100px) and (max-width : 1200px){
 	.software{
 		width: 130px;	
@@ -28,6 +31,7 @@
 	}
 }
 
+/*Slide3: How the Analyst designed it*/
 @media only screen and (min-width : 1000px) and (max-width : 1100px){
 	.software{
 		width: 130px;	
@@ -36,6 +40,7 @@
 	}
 }
 
+/*Slide4: How the programmer wrote it*/
 @media only screen and (min-width : 900px) and (max-width : 1000px){
 	.software{
 		width: 130px;	
@@ -44,6 +49,7 @@
 	}
 }
 
+/*Slide5: How the buisness consultant described it*/
 @media only screen and (min-width : 800px) and (max-width : 900px){
 	.software{
 		width: 130px;	
@@ -52,6 +58,7 @@
 	}
 }
 
+/*Slide6: How the project was documented*/
 @media only screen and (min-width : 700px) and (max-width : 800px){
 	.software{
 		width: 130px;	
@@ -60,6 +67,7 @@
 	}
 }
 
+/*Slide7: What operations installed*/
 @media only screen and (min-width : 600px) and (max-width : 700px){
 	.software{
 		width: 130px;	
@@ -68,6 +76,7 @@
 	}
 }
 
+/*Slide8: How the customer was billed*/
 @media only screen and (min-width : 500px) and (max-width : 600px){
 	.software{
 		width: 130px;	
@@ -76,6 +85,7 @@
 	}
 }
 
+/*Slide9: How it was supported*/
 @media only screen and (min-width : 400px) and (max-width : 500px){
 	.software{
 		width: 130px;	
@@ -84,6 +94,7 @@
 	}
 }
 
+/*Slide10: What the customer really needed*/
 @media only screen and (max-width : 400px){
 	.software{
 		width: 130px;	

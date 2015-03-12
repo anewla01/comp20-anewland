@@ -95,8 +95,9 @@
 				get_my_location();
 
 				xhr = new XMLHttpRequest();
-				xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 				data = xhr.open("POST", "http://messagehub.herokuapp.com/messages.json", true);
+				xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+				
 				
 				args = "login=LeaAmmerman&lat=" + my_lat+ "&lng=" + my_lng;
 				xhr.send(args);

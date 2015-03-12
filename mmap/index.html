@@ -90,17 +90,16 @@
 		
 			var my_lat = 0;
 			var my_lng = 0;
+			var params = "login=LeaAmmerman&lat=" + my_lat+ "&lng=" + my_lng;
 			function init() {
 
 				get_my_location();
 
 				request = new XMLHttpRequest();
-				data = request.open("POST", "http://messagehub.herokuapp.com/messages.json", true);
+				// data = request.open("POST", "http://messagehub.herokuapp.com/messages.json", true);
 				request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-				
-				
-				args = "login=LeaAmmerman&lat=" + my_lat+ "&lng=" + my_lng;
-				request.send(args);
+				request.setRequestHeader("Content-length", params.length);
+				request.send(params);
 				// request.onreadystatechange = //Some function
 				
 
@@ -175,31 +174,39 @@
 // infowindow.setContent(marker.title);
 // infowindow.open(map, marker);
 // });
-
-
+	
+			// Taken from http://code.google.com/apis/maps/documentation/javascript/places.html
+			// function callback(results, status)
+			// {
+			// 	if (status == google.maps.places.PlacesServiceStatus.OK) {
+			// 		alert("Got places back!");
+			// 		places = results;
+			// 		for (var i = 0; i < results.length; i++) {
+			// 			createMarker(results[i]);
+			// 		}
+			// 	}
+			// }
 			
-				
-		// function init()
-		// {
-		// 	if (navigator.geolocation) { // the navigator.geolocation object is supported on your browser
-		// 		navigator.geolocation.getCurrentPosition(function(position) {
-		// 		my_lat = position.coords.latitude;
-		// 		my_lng = position.coords.longitude;
-				
-		// 		});
-					
-		// 	}
-		// 	else {
-		// 		alert("Geolocation is not supported by your web browser. What a shame!");
-		// 	}	
+			// function createMarker(place)
+			// {
+			// 	var placeLoc = place.geometry.location;
+			// 	var marker = new google.maps.Marker({
+			// 		map: map,
+			// 		position: place.geometry.location
+			// 	});
+			// 	google.maps.event.addListener(marker, 'click', function() {
+			// 		infowindow.close();
+			// 		infowindow.setContent(place.name);
+			// 		infowindow.open(map, this);
+			// 	});
+   //    }
 
-		
 
-		// 	// request = new XMLHttpRequest();
-		// 	// request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-		// 	// request.send("login=YOURLOGIN &lat=YOUR_LATITUDE&lng=YOUR_LONGITUDE")
-		// 	// request.open("POST", "http://messagehub.herokuapp.com/messages.json", true);
-		// }
+
+
+
+
+
 		</script>
 
 	</head>	

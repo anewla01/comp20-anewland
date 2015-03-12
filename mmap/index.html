@@ -78,17 +78,123 @@
 
 
 
-****************************************************************************
+<!-- ************************************************************************************** -->
 <html>
 	<head>
+		<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+		<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=true&amp;libraries=places"></script>
+		<script src="http://maps.google.com/maps/api/js?sensor=true"></script>
 		<link rel="stylesheet" href="style.css" />
-		xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+
 		<script>
-		function init()
-		{
-			request = new XMLHttpRequest();
-			request.open("POST", "http://messagehub.herokuapp.com/messages.json", true);
-		}
+		
+			var my_lat = 0;
+			var my_lng = 0;
+			function init() {
+
+				request = new XMLHttpRequest();
+				request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+				// request.send("login=LeaAmmerman&lat=my_lat&lng=my_lng");
+				// request.open("POST", "http://messagehub.herokuapp.com/messages.json", true);
+				get_my_location();
+
+			}
+
+			function get_my_location(){
+				if (navigator.geolocation) { // the navigator.geolocation object is supported on your browser
+					navigator.geolocation.getCurrentPosition(function(position) {
+					my_lat = position.coords.latitude;
+					my_lng = position.coords.longitude;
+					elem = document.getElementById("info");
+					});
+				}
+				else {
+					alert("Geolocation is not supported by your web browser. What a shame!");
+				}
+			}
+
+
+			/* Stolen */
+			function renderMap()
+			{
+				me = new google.maps.LatLng(myLat, myLng);
+				// Update map and go there...
+				map.panTo(me);
+				// Create a marker
+				marker = new google.maps.Marker({
+					position: me,
+					title: "Here I Am!"
+				});
+				marker.setMap(map);
+
+				// Open info window on click of marker
+				google.maps.event.addListener(marker, 'click', function() {
+					infowindow.setContent(marker.title);
+					infowindow.open(map, marker);
+				});
+
+				// Calling Google Places API
+				var request = {
+					location: me,
+					radius: '500',
+					types: ['food']
+				};
+
+				service = new google.maps.places.PlacesService(map);
+				service.search(request, callback);
+			}
+
+
+				// setting up map 
+
+// var landmark = new google.maps.LatLng(42.3599611, -71.0567528);
+// // Set up map
+// var myOptions = {
+// zoom: 13, // The larger the zoom number, the bigger the zoom
+// center: landmark,
+// mapTypeId: google.maps.MapTypeId.ROADMAP
+// };
+// // Create the map in the "map_canvas" <div>
+// var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+// // Create a marker
+// var marker = new google.maps.Marker({
+// position: landmark,
+// title: "Faneuil Hall, Boston, MA"
+// });
+// marker.setMap(map);
+// // This is a global info window...
+// var infowindow = new google.maps.InfoWindow();
+// // Open info window on click of marker
+// google.maps.event.addListener(marker, 'click', function() {
+// infowindow.setContent(marker.title);
+// infowindow.open(map, marker);
+// });
+
+
+			
+				
+		// function init()
+		// {
+		// 	if (navigator.geolocation) { // the navigator.geolocation object is supported on your browser
+		// 		navigator.geolocation.getCurrentPosition(function(position) {
+		// 		my_lat = position.coords.latitude;
+		// 		my_lng = position.coords.longitude;
+				
+		// 		});
+					
+		// 	}
+		// 	else {
+		// 		alert("Geolocation is not supported by your web browser. What a shame!");
+		// 	}	
+
+		
+
+		// 	// request = new XMLHttpRequest();
+		// 	// request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+		// 	// request.send("login=YOURLOGIN &lat=YOUR_LATITUDE&lng=YOUR_LONGITUDE")
+		// 	// request.open("POST", "http://messagehub.herokuapp.com/messages.json", true);
+		// }
 		</script>
 
 	</head>	

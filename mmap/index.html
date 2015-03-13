@@ -73,6 +73,7 @@
 			{
 				me = new google.maps.LatLng(my_lat, my_lng);
 				// Update map and go there...
+
 				map.panTo(me);
 				// Create a marker
 				marker = new google.maps.Marker({
@@ -95,7 +96,8 @@
 				// };		
 
 				service = new google.maps.places.PlacesService(map);
-				service.search(other_user_data, setup_user_markers);
+				// service.search(other_user_data, setup_user_markers);
+				setup_user_markers(other_user_data);
 			}
 
 
@@ -116,20 +118,26 @@
 				console.log("in setup_user_markers");
 				if (data != null){
 					alert("Found other users!");
-					places = data;
+					// places = data;
 					for (var i = 0; i < data.length; i++) {
 						createMarker(data[i]);
 					}
 				}
 			}
 			
-			function createMarker(place)
+			function createMarker(user_data)
 			{
 				var placeLoc = place.geometry.location;
-				var marker = new google.maps.Marker({
-					map: map,
-					position: place.geometry.location
+
+				user_pos = new google.maps.LatLng(user_data["lat"], user_data["lng"]);
+					
+
+				marker = new google.maps.Marker({
+						position: user_pos,
+						title: user_data["login"]
 				});
+				marker.setMap(map);
+
 				google.maps.event.addListener(marker, 'click', function() {
 					infowindow.close();
 					infowindow.setContent(place.name);

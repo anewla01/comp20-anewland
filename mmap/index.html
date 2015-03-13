@@ -126,7 +126,7 @@
 				get_my_location();
 
 				
-				other_user_data = xhr.open("POST", url , true);
+				other_user_data = JSON.parse(xhr.open("POST", url , true));
 				console.log(other_user_data);
 
 				xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");

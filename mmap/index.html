@@ -13,7 +13,6 @@
 			var my_lng = 0;
 			var my_login = "LeaAmmerman";
 			var other_user_data;
-			var distance;
 
 			var params = "login=" + my_login + "&lat=" + my_lat+ "&lng=" + my_lng;
 			var url = "https://secret-about-box.herokuapp.com/sendLocation";
@@ -139,8 +138,10 @@
 				});
 				marker.setMap(map);
 
-				haversine_calc(my_lat, user_data["lat"], my_lng, user_data["lng"]);
-				console.log("distance!" + distance);
+				var distance;
+
+				distance = haversine_calc(my_lat, user_data["lat"], my_lng, user_data["lng"]);
+				distance = km_mph(distance);
 
 				var content_string = "<div>" + "<h1>" + user_data["login"] + "</h1>" + "<p> Distance away from me: " + distance + "</p>" + "</div>";
 
@@ -165,13 +166,21 @@
 				        Math.sin(Δλ/2) * Math.sin(Δλ/2);
 				c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
 
-				distance = R * c;
+				var d = R * c;
+
+				return d;
       		}
 
       		Number.prototype.toRadians = function() {
 				return this * Math.PI / 180;
 			}
+				
+			function km_mp(a){
 
+				var m;
+				m = a * 0.621371;
+				return m;
+			}
 		</script>
 
 	</head>	

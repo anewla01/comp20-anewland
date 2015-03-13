@@ -43,6 +43,7 @@
 					if(xhr.readyState == 4 && xhr.status == 200){
 						other_user_data = JSON.parse(xhr.responseText);
 						console.log(other_user_data[0]["login"]);
+						renderMap();
 					}
 				}
 
@@ -59,7 +60,7 @@
 					my_lat = position.coords.latitude;
 					my_lng = position.coords.longitude;
 					// elem = document.getElementById("info");
-					renderMap();
+					// renderMap();
 					});
 				}
 				else {

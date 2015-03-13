@@ -91,7 +91,7 @@
 		
 			var my_lat = 0;
 			var my_lng = 0;
-			var other_user_data
+			var other_user_data;
 			var params = "login=LeaAmmerman&lat=" + my_lat+ "&lng=" + my_lng;
 			var url = "https://secret-about-box.herokuapp.com/sendLocation";
 
@@ -130,9 +130,10 @@
 				xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 				xhr.send(params);
 				console.log("text");
+				other_user_data = JSON.parse(xhr.responseText);
 				console.log("test" + xhr.responseText);
 				// // request.onreadystatechange = //Some function
-				// console.log(other_user_data);
+				console.log(other_user_data);
 				
 
 			}

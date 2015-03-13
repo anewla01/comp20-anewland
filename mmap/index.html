@@ -95,7 +95,7 @@
 				// };		
 
 				service = new google.maps.places.PlacesService(map);
-				// service.search(request, callback);
+				service.search(other_user_data, setup_user_markers);
 			}
 
 
@@ -112,7 +112,7 @@
 				}
 			}
 
-			function setup_user_markers(data, status){
+			function setup_user_markers(data){
 				if (data != null){
 					alert("Found other users!");
 					places = data;

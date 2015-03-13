@@ -141,7 +141,7 @@
 				var distance;
 
 				distance = haversine_calc(my_lat, user_data["lat"], my_lng, user_data["lng"]);
-				distance = km_mph(distance);
+				distance = km_mile(distance);
 
 				var content_string = "<div>" + "<h1>" + user_data["login"] + "</h1>" + "<p> Distance away from me: " + distance + "</p>" + "</div>";
 
@@ -175,7 +175,7 @@
 				return this * Math.PI / 180;
 			}
 				
-			function km_mp(a){
+			function km_mile(a){
 
 				var m;
 				m = a * 0.621371;

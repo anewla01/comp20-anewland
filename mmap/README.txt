@@ -10,7 +10,7 @@
     
     Incorrect Implementations: Using a URI in to get JSON data information will not work when running locally. This is due to the fact the data that data being retrieved is in a different domain than the file requesting it.
 
-    Completion Time: 1.25 hour
+    Completion Time: 5 hour
     Collaborators: None
 
 

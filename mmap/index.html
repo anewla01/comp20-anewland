@@ -129,7 +129,6 @@
 			{
 
 				user_pos = new google.maps.LatLng(user_data["lat"], user_data["lng"]);
-					console.log(user_data["login"]+ " " +user_data["lat"])
 
 				marker = new google.maps.Marker({
 						position: user_pos,
@@ -139,7 +138,7 @@
 
 				google.maps.event.addListener(marker, 'click', function() {
 					infowindow.close();
-					infowindow.setContent(place.name);
+					infowindow.setContent(user_data[login]);
 					infowindow.open(map, this);
 				});
       		}

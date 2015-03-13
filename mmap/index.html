@@ -97,11 +97,11 @@
 			var request = new XMLHttpRequest();
 
 			var me = new google.maps.LatLng(my_lat, my_lng);
-			// var myOptions = {
-			// 			zoom: 13, // The larger the zoom number, the bigger the zoom
-			// 			center: me,
-			// 			mapTypeId: google.maps.MapTypeId.ROADMAP
-			// 		};
+			var my_options = {
+						zoom: 13, // The larger the zoom number, the bigger the zoom
+						center: me,
+						mapTypeId: google.maps.MapTypeId.ROADMAP
+					};
 			var map;
 			var marker;
 			var infowindow = new google.maps.InfoWindow();
@@ -113,7 +113,7 @@
 
 			function init() {
 
-				map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+				map = new google.maps.Map(document.getElementById("map_canvas"), my_options);
 				get_my_location();
 
 				

@@ -2,6 +2,7 @@
 /*Necessary items for Google Maps versions 3 */
 html {
 	height: 100%;
+	font-family: Helvetica, "Helvetica Neue", Arial, sans-serif;
 }
 
 body {

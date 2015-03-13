@@ -95,7 +95,7 @@
 			var params = "login=LeaAmmerman&lat=" + my_lat+ "&lng=" + my_lng;
 			var url = "https://secret-about-box.herokuapp.com/sendLocation";
 
-			var request = new XMLHttpRequest();
+			var xhr = new XMLHttpRequest();
 
 			var me = new google.maps.LatLng(my_lat, my_lng);
 			var my_options = {
@@ -119,9 +119,9 @@
 				get_my_location();
 
 				
-				other_user_data = request.open("POST", url , true);
-				request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-				request.send(params);
+				other_user_data = xhr.open("POST", url , true);
+				xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+				xhr.send(params);
 				// request.onreadystatechange = //Some function
 				
 
@@ -164,15 +164,15 @@
 					infowindow.open(map, marker);
 				});
 
-				// Calling Google Places API
-				var request = {
-					location: me,
-					radius: '500',
-					types: ['food']
-				};		
+				// // Calling Google Places API
+				// var request = {
+				// 	location: me,
+				// 	radius: '500',
+				// 	types: ['food']
+				// };		
 
 				service = new google.maps.places.PlacesService(map);
-				service.search(request, callback);
+				// service.search(request, callback);
 			}
 
 

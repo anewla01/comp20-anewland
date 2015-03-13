@@ -136,9 +136,9 @@
 						title: user_data["login"]
 				});
 				marker.setMap(map);
-				
+
 				var d;
-				// haversine_calc(my_lat, user_data["lat"], my_lng, user_data["lng"]);
+				haversine_calc(my_lat, user_data["lat"], my_lng, user_data["lng"]);
 
 				var content_string = "<div>" + "<h1>" + user_data["login"] + "</h1>" + "<p> Distance away from me: " + d + "</p>" + "</div>"
 
@@ -164,6 +164,8 @@
 				var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
 
 				d = R * c
+
+				console.log("distance" + d);
       		}
 
       		Number.prototype.toRadiansg = function() {

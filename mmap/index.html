@@ -109,7 +109,14 @@
 			var places;
 
 
+			// function parse(){
+			// 	// JSON.parse(request.responseText)
+			// 	request = new XMLHttpRequest();
+			// 	request.open("GET", "http://messagehub.herokuapp.com/messages.json", true);
 
+			// 	request.onreadystatechange = parse_data; //parseData is function 
+ 		// 		request.send();
+			// }
 
 
 
@@ -120,6 +127,8 @@
 
 				
 				other_user_data = xhr.open("POST", url , true);
+				console.log(other_user_data);
+
 				xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 				xhr.send(params);
 				// request.onreadystatechange = //Some function

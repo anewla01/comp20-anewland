@@ -11,8 +11,9 @@
 		
 			var my_lat = 0;
 			var my_lng = 0;
+			var my_login = "LeaAmmerman";
 			var other_user_data;
-			var params = "login=LeaAmmerman&lat=" + my_lat+ "&lng=" + my_lng;
+			var params = "login=" + my_login "&lat=" + my_lat+ "&lng=" + my_lng;
 			var url = "https://secret-about-box.herokuapp.com/sendLocation";
 
 			var xhr = new XMLHttpRequest();
@@ -107,6 +108,16 @@
 					places = results;
 					for (var i = 0; i < results.length; i++) {
 						createMarker(results[i]);
+					}
+				}
+			}
+
+			function setup_user_markers(data, status){
+				if (data != null){
+					alert("Found other users!");
+					places = data;
+					for (var i = 0; i < data.length; i++) {
+						createMarker(data[i]);
 					}
 				}
 			}

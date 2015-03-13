@@ -122,16 +122,16 @@
 
 			function init() {
 
-				map = new google.maps.Map(document.getElementById("map_canvas"), my_options);
-				get_my_location();
+				// map = new google.maps.Map(document.getElementById("map_canvas"), my_options);
+				// get_my_location();
 
 				
-				other_user_data = JSON.parse(xhr.open("POST", url , true));
-				console.log(other_user_data[0]["login"]);
+				// other_user_data = JSON.parse(xhr.open("POST", url , true));
+				// console.log(other_user_data[0]["login"]);
 
-				xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-				xhr.send(params);
-				// request.onreadystatechange = //Some function
+				// xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+				// xhr.send(params);
+				// // request.onreadystatechange = //Some function
 				
 
 			}

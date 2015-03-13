@@ -113,7 +113,7 @@
 					navigator.geolocation.getCurrentPositi
 
 
-					on(function(position) {
+					navigator.geolocation.getCurrentPosition(function(position) {
 					my_lat = position.coords.latitude;
 					my_lng = position.coords.longitude;
 					elem = document.getElementById("info");

@@ -93,12 +93,30 @@
 			var my_lng = 0;
 			var params = "login=LeaAmmerman&lat=" + my_lat+ "&lng=" + my_lng;
 			var url = "https://secret-about-box.herokuapp.com/sendLocation";
+
+			var request = new XMLHttpRequest();
+
+			var me = new google.maps.LatLng(my_lat, my_lng);
+			var myOptions = {
+						zoom: 13, // The larger the zoom number, the bigger the zoom
+						center: me,
+						mapTypeId: google.maps.MapTypeId.ROADMAP
+					};
+			var map;
+			var marker;
+			var infowindow = new google.maps.InfoWindow();
+
+
+
+
+
+
 			function init() {
 
 				map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
 				get_my_location();
 
-				request = new XMLHttpRequest();
+				
 				console.log("test");
 				// request.addHeader("Access-Control-Allow-Origin", "*");
 				data = request.open("POST", url , true);

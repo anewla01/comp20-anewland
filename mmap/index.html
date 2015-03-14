@@ -79,14 +79,13 @@
 				// Create a marker
 				marker = new google.maps.Marker({
 					position: me,
-					title: my_login,
 					icon: "wht-stars.png"
 				});
 				marker.setMap(map);
 
 				// Open info window on click of marker
 				google.maps.event.addListener(marker, 'click', function() {
-					infowindow.setContent(marker.title);
+					infowindow.setContent(my_login);
 					infowindow.open(map, marker);
 				});
 

@@ -26,7 +26,7 @@
 						mapTypeId: google.maps.MapTypeId.ROADMAP
 					};
 			var map;
-			var marker;
+			// var marker;
 			var infowindow = new google.maps.InfoWindow();
 			var places;
 
@@ -38,7 +38,7 @@
 						other_user_data = JSON.parse(xhr.responseText);
 					}
 				}
-				
+
 				map = new google.maps.Map(document.getElementById("map_canvas"), my_options);
 				
 				get_my_location();
@@ -67,7 +67,6 @@
 			}
 
 
-			/* Stolen */
 			function renderMap()
 			{
 				me = new google.maps.LatLng(my_lat, my_lng);
@@ -75,7 +74,7 @@
 
 				map.panTo(me);
 				// Create a marker
-				marker = new google.maps.Marker({
+				var marker = new google.maps.Marker({
 					position: me,
 					title: my_login,
 					icon: "wht-stars.png"
@@ -109,7 +108,7 @@
 
 				user_pos = new google.maps.LatLng(user_data["lat"], user_data["lng"]);
 
-				marker = new google.maps.Marker({
+				var marker = new google.maps.Marker({
 						position: user_pos
 				});
 				marker.setMap(map);

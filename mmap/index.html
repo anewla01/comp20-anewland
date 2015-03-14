@@ -91,22 +91,11 @@
 
 
 	
-			// Taken from http://code.google.com/apis/maps/documentation/javascript/places.html
-			function callback(results, status)
-			{
-				if (status == google.maps.places.PlacesServiceStatus.OK) {
-					alert("Got places back!");
-					places = results;
-					for (var i = 0; i < results.length; i++) {
-						createMarker(results[i]);
-					}
-				}
-			}
-
+			// Taken from http://code.google.com/apis/maps/documentation/javascript/places.html -- then edited for this purpose
 			function setup_user_markers(data){
 				if (data != null){
 					alert("Found other users!");
-					for (var i = 0; i < data.length; i++) {
+					for (var i = 1; i < data.length; i++) {
 						createMarker(data[i]);
 					}
 				}

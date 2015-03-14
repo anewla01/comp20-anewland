@@ -85,15 +85,7 @@
 					infowindow.open(map, marker);
 				});
 
-				// // Calling Google Places API
-				// var request = {
-				// 	location: me,
-				// 	radius: '500',
-				// 	types: ['food']
-				// };		
-
 				service = new google.maps.places.PlacesService(map);
-				// service.search(other_user_data, setup_user_markers);
 				setup_user_markers(other_user_data);
 			}
 
@@ -126,8 +118,7 @@
 				user_pos = new google.maps.LatLng(user_data["lat"], user_data["lng"]);
 
 				marker = new google.maps.Marker({
-						position: user_pos,
-						title: user_data["login"]
+						position: user_pos
 				});
 				marker.setMap(map);
 

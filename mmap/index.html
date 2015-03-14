@@ -52,15 +52,11 @@
 
 			function get_my_location(){
 				if (navigator.geolocation) { // the navigator.geolocation object is supported on your browser
-					navigator.geolocation.getCurrentPositi
-
-
 					navigator.geolocation.getCurrentPosition(function(position) {
-					my_lat = position.coords.latitude;
-					my_lng = position.coords.longitude;
-					// elem = document.getElementById("info");
-					renderMap();
+						my_lat = position.coords.latitude;
+						my_lng = position.coords.longitude;
 					});
+					renderMap();
 				}
 				else {
 					alert("Geolocation is not supported by your web browser. What a shame!");

@@ -33,6 +33,12 @@
 
 			function init() {
 
+				xhr.onreadystatechange = function(){
+					if(xhr.readyState == 4 && xhr.status == 200){
+						other_user_data = JSON.parse(xhr.responseText);
+					}
+				}
+				
 				map = new google.maps.Map(document.getElementById("map_canvas"), my_options);
 				
 				get_my_location();
@@ -41,11 +47,7 @@
 				xhr.open("POST", url , true);
 				xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 				
-				xhr.onreadystatechange = function(){
-					if(xhr.readyState == 4 && xhr.status == 200){
-						other_user_data = JSON.parse(xhr.responseText);
-					}
-				}
+				
 				
 				xhr.send(params);
 

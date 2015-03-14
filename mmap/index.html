@@ -43,7 +43,6 @@
 				xhr.onreadystatechange = function(){
 					if(xhr.readyState == 4 && xhr.status == 200){
 						other_user_data = JSON.parse(xhr.responseText);
-						console.log(other_user_data[0]["login"]);
 					}
 				}
 
@@ -117,10 +116,8 @@
 			}
 
 			function setup_user_markers(data){
-				console.log("in setup_user_markers");
 				if (data != null){
 					alert("Found other users!");
-					// places = data;
 					for (var i = 0; i < data.length; i++) {
 						createMarker(data[i]);
 					}
@@ -141,9 +138,6 @@
 				var distance;
 
 				distance = haversine_calc(my_lat, user_data["lat"], my_lng, user_data["lng"]);
-				if (user_data["login"] == "LeeMuilman"){
-					console.log(distance);
-				}
 				distance = km_mile(distance);
 
 				var content_string = "<div>" + "<h1>" + user_data["login"] + "</h1>" + "<p> Distance away from me: " + distance + "</p>" + "</div>";

@@ -1,0 +1,19 @@
+/* 
+ * Andre C. Newland
+ * anewla01
+ * Assignment: Lab 7
+ */
+
+
+
+    Correct Implementations: Correctly used JQuery event handlers in order to maintain 
+    persistent data from text inputted by a user.
+    
+    Incorrect Implementations: 
+
+    NOTES: Interstingly enough. It was found, when testing, that inputting a number would 
+    alter the order of localStorage. 
+
+    Completion Time: 2.5 hour
+    
+    Collaborators: None

@@ -10,29 +10,30 @@
 	<p> by: Andre C. Newland 4/23/15</p>
 	
 	<h2>Introduction</h2>
-		<p>********** REMOVE ********provide a description of the product and what you were hired to do</p>
 		<p>This report seeks to assess how secure the <a href= "https://fathomless-everglades-2760.herokuapp.com/"> Server </a> developed by Thomas Colgrove for <a href = "http://tuftsdev.github.io/WebProgramming/assignments/a3.html"> Comp20 Assignment 3</a>. The goal was to determine whether or not this application is safe for public use. Colgrove aimed to develop a server-side web application using Heroku, Node.js, and the Express web framework. This application would collect data from users and read and write data to a MongoDB database.</p>
 
 	<h2>Methodology</h2>
-		<p>********** REMOVE ******** Describe your methodology pen testing the application, including the tools that you used</p> 
-		<p>Testing done on this applicattion consisted of using </p>	
+		<p>Testing done on this applicattion consisted of "black box" using  POSTMAN in order to POST data to the server. Once the source code was received it was combed through for any other potential security gaps. </p>	
 
 
 	<h2>Abstract of Findings</h2>
 		<p> Provide an overview of all the security and privacy issues you identified. This section should be written for non-technical managers who do not have technical expertise and do not have time to read the entire document. Write this section using lay langauge.</p>
+		<p> Upon tampering with the application I found that there were three areas in which data could be manipulated in order to apply malicious cross site scripting ** || I found that there were several areas were malicious users could have done damage</p>
+		<p> Not surprisngly many of the security issues arose from trusting in user input</p>
 
 	<h2>Issues Found</h2>
-		<p>For each issue that you find, document:</p>
-			<ul>1. (e.g., databse injection, really bad programming practice)</ul>
-			<ul>2. Location / page where issue was found</ul>
-			<ul>3. Severity of issue (e.g., low, medium, or high) Justify you answer</ul>
-			<ul>4. Description of issue. How did you find it ? A screenshot of problem is excellent</ul>
-			<ul>5. Proof of vulnerability. Schreen Shots are ideal</ul>
-			<ul>6. Resolution. How did you resolve the issue? Show code if possible</ul>
+		<p>Cross Site Scripting</p>
+			<ul>Affects POST API and GET API</ul>
+			<ul>High - attackers havve the opening to inject malicious content into the web application. This is a major security risk that leaves the web application in grave danger. This is an issue that can be solved relativ easily in sanitizing user input. </ul>
+			<ul>This problem was found through sending data using POSTMAN. All three data varaibles, login, lat, and lng were susceptible to attack throuch cross scripting.</ul>
+			<ul>An alert was sent through cross scripting: <p><img src="XSS.PNG"/> A while loop was also sent to the server causing it to time out.</p></ul>
+			<ul>This issue could be resolved using string sanitation of user input. Note the code scene below was also found in Thomas Colgrove's source code. 
+			CODE: sanitizer.escape(sanitizer.sanitize(DATA)). The DATA can be replaced with any input the server received while sanitizer is an downloadable package that strips data of any characters that would cause a string to act as executable code. </ul>
+			<ul>Using source code and cross site scripting gives outsiders access to the database used by the web application. This presents the issue of preventing data persistence as well data manipulation by outsiders without proper means. From scanning the sourcecode it was also found that cross site scripting could also be used to attack from the /location.json through the search functionality of the app.get. </ul>
 			
 
 	<h2>Conclusion</h2>
-		<p>Also list future considerations and recommendations with costs</p>
+		<p>In the future Colgrove should implement the santiation of user data (which he was obviously aware of). In attacking this server it became increasing apprent how dangerous cross site scripting could be and why it is essential for server programmers to secure data.</p>
 
 
 </body>
